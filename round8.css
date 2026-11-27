@@ -114,10 +114,6 @@ body:has(.home .options) > nav::after,
   opacity: var(--card-grain-opacity);
 }
 
-.home .options {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
 .home .options a {
   position: relative;
   z-index: 301;
@@ -162,26 +158,6 @@ body:has(.home .options) > nav::after,
   outline-offset: 3px;
 }
 
-.projects {
-  padding-block: 32px 40px;
-}
-
-.project-list {
-  list-style: none;
-  margin-block: 24px;
-}
-
-.project-list li {
-  padding-block: 16px;
-  border-bottom: 1px solid var(--border);
-}
-
-@media (max-width: 640px) {
-  .home .options {
-    grid-template-columns: 1fr;
-  }
-}
-
 .option-photo {
   width: 100%;
   aspect-ratio: 3 / 2;
@@ -190,35 +166,4 @@ body:has(.home .options) > nav::after,
 
 .home .options :is(.opt-title, .opt-desc) {
   padding-inline: 20px;
-}
-
-.project-icon-stack {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  isolation: isolate;
-  background: var(--paper);
-}
-
-.project-icon-stack img {
-  width: min(24%, 60px);
-  aspect-ratio: 1;
-  object-fit: cover;
-  background: var(--white);
-  border: 2px solid var(--white);
-  border-radius: 23%;
-  box-shadow: 0 3px 10px color-mix(in srgb, var(--ink) 25%, transparent);
-  transform: rotate(-8deg);
-}
-
-.project-icon-stack img + img {
-  margin-left: -5%;
-}
-
-.project-icon-stack img:nth-child(even) {
-  transform: translateY(8px) rotate(7deg);
-}
-
-.project-icon-stack .mirality-brand {
-  padding: min(3%, 8px);
 }

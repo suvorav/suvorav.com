@@ -1,9 +1,0 @@
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>svg { color: #000; }</style>
-  <g clip-path="url(#clip)">
-    <path d="M4.94886 1.68182H6.23864L7.96591 5.89773H8.03409L9.76136 1.68182H11.0511V7.5H10.0398V3.50284H9.9858L8.37784 7.48295H7.62216L6.0142 3.49432H5.96023V7.5H4.94886V1.68182Z" fill="currentColor"/>
-    <line y1="8.00006" x2="16" y2="8.00016" stroke="currentColor"/>
-    <path d="M11.0511 14.3182H9.76136L8.03409 10.1023H7.96591L6.23864 14.3182H4.94886L4.94886 8.5H5.96023L5.96023 12.4972H6.0142L7.62216 8.51705H8.37784L9.9858 12.5057H10.0398V8.5H11.0511V14.3182Z" fill="currentColor"/>
-  </g>
-  <defs><clipPath id="clip"><rect width="12" height="12" fill="white" transform="translate(2 2)"/></clipPath></defs>
-</svg>
