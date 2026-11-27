@@ -469,6 +469,8 @@ nav.menu-open .nav-burger .icon-close {
 /* Sticky footer: short pages keep the footer at the bottom of the viewport */
 body { min-height: 100vh; display: flex; flex-direction: column; }
 main { flex: 1 0 auto; }
+footer .container { flex-wrap: wrap; row-gap: 8px; }
+.footer-name { white-space: nowrap; }
 
 /* Open-to-work dot sits next to "For recruiters"; tooltip opens below it */
 .nav-recruiters a { display: inline-flex; align-items: center; gap: 8px; }

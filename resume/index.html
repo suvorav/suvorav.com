@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume · Oleg Suvorov</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=remove-cv-gate">
+  <script>
+    // The only copy of the blob URL. Fill this in after the upload.
+    const BLOB_RESUME_URL = "https://REPLACE.public.blob.vercel-storage.com/resume.pdf";
+    document.write('<meta http-equiv="refresh" content="0; url=' + BLOB_RESUME_URL + '">');
+    const themeMode = localStorage.getItem("themeMode") || "system";
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    document.documentElement.setAttribute(
+      "data-theme",
+      themeMode === "system" ? (prefersLight ? "light" : "dark") : themeMode
+    );
+  </script>
+  <style>
+    .resume-fallback {
+      padding: 72px 0 96px;
+    }
+
+    .resume-fallback a {
+      color: var(--foreground);
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="container resume-fallback">
+      <a id="resume-open">Open resume (PDF)</a>
+    </div>
+  </main>
+  <script>
+    document.getElementById("resume-open").href = BLOB_RESUME_URL;
+    location.replace(BLOB_RESUME_URL);
+  </script>
+</body>
+
+</html>
