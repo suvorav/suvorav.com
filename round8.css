@@ -1,0 +1,184 @@
+/* Round 8 presentation for the production markup. */
+:root {
+  /* Palette */
+  --ink: #00140d;
+  --paper: #ecf3f1;
+  --white: #fff;
+  --forest: #1c332c;
+  --deep-sage: #243832;
+  --mist: #c0c9c6;
+  --mint: #4cbf95;
+  --brand-green: #008055;
+  --link-green: #007a50;
+  --sage: #4e7064;
+  --deep-green: #39594e;
+  --pale-sage: #f0f5f3;
+  --off-white: #f7faf9;
+  --burnt-orange: #b54b12;
+  --light-orange: #ffac70;
+
+  /* Theme roles. These also feed the production component styles. */
+  --background: var(--ink);
+  --foreground: var(--paper);
+  --muted: var(--forest);
+  --muted-fg: var(--mist);
+  --footer-meta-fg: var(--muted-fg);
+  --border: color-mix(in srgb, var(--foreground) 15%, transparent);
+  --input: color-mix(in srgb, var(--foreground) 45%, transparent);
+  --primary: var(--mint);
+  --primary-fg: var(--ink);
+  --accent: var(--deep-sage);
+  --accent-fg: var(--foreground);
+  --accent-color: var(--primary);
+  --status-dot: var(--light-orange);
+  --grain-mode: overlay;
+  --grain-opacity: .18;
+}
+
+[data-theme="light"] {
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --muted: var(--off-white);
+  --muted-fg: var(--sage);
+  --footer-meta-fg: var(--deep-green);
+  --input: color-mix(in srgb, var(--foreground) 50%, transparent);
+  --primary: var(--brand-green);
+  --primary-fg: var(--white);
+  --accent: var(--pale-sage);
+  --accent-color: var(--link-green);
+  --status-dot: var(--burnt-orange);
+  --grain-mode: multiply;
+  --grain-opacity: .11;
+}
+
+.status-dot,
+.status-dot::after {
+  background: var(--status-dot);
+}
+
+.nav-sub,
+.nav-links > li > a:not(.nav-cta, :hover),
+.nav-contact-trigger:not(:hover, [aria-expanded="true"]),
+.home .hero-bio,
+.home .opt-desc {
+  color: var(--foreground);
+}
+
+footer .footer-name {
+  color: var(--footer-meta-fg);
+}
+
+footer .footer-links a {
+  color: var(--foreground);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 300;
+  background: url("/img/grain.png") repeat;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: var(--grain-mode);
+}
+
+.home .options {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.home .options a {
+  overflow: hidden;
+  padding: 0 0 20px;
+  background: var(--accent);
+  border: 1px solid var(--border);
+}
+
+.rec-link {
+  background: transparent;
+  color: var(--foreground);
+  border-color: var(--input);
+}
+
+.rec-link svg {
+  color: inherit;
+}
+
+.home .options a:is(:hover, :focus-visible),
+.rec-link:is(:hover, :focus-visible) {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-fg);
+}
+
+.home .options a:is(:hover, :focus-visible) :is(.opt-desc, .opt-arrow) {
+  color: inherit;
+}
+
+.home .options a:focus-visible,
+.rec-link:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.projects {
+  padding-block: 32px 40px;
+}
+
+.project-list {
+  list-style: none;
+  margin-block: 24px;
+}
+
+.project-list li {
+  padding-block: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  .home .options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.option-photo {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.home .options :is(.opt-title, .opt-desc) {
+  padding-inline: 20px;
+}
+
+.project-icon-stack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  background: var(--paper) url("/img/grain.png");
+  background-blend-mode: soft-light;
+}
+
+.project-icon-stack img {
+  width: min(24%, 60px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 23%;
+  box-shadow: 0 3px 10px color-mix(in srgb, var(--ink) 25%, transparent);
+  transform: rotate(-8deg);
+}
+
+.project-icon-stack img + img {
+  margin-left: -5%;
+}
+
+.project-icon-stack img:nth-child(even) {
+  transform: translateY(8px) rotate(7deg);
+}
+
+.project-icon-stack .mirality-brand {
+  padding: min(3%, 8px);
+}
