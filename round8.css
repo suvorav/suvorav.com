@@ -63,8 +63,17 @@
 .nav-links > li > a:not(.nav-cta, :hover),
 .nav-contact-trigger:not(:hover, [aria-expanded="true"]),
 .home .hero-bio,
-.home .opt-desc {
+.home .opt-desc,
+.rec-sub,
+.career-intro,
+.work-description,
+.notes-about,
+.case-summary {
   color: var(--foreground);
+}
+
+.pin-progress-fill {
+  background: var(--accent-color);
 }
 
 footer .footer-name {
