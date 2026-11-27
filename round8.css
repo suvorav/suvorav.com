@@ -139,6 +139,14 @@ body:has(.home .options) > nav::after,
   color: inherit;
 }
 
+.home .opt-arrow {
+  visibility: hidden;
+}
+
+.home .options a:is(:hover, :focus-visible) .opt-arrow {
+  visibility: visible;
+}
+
 .home .options a:focus-visible,
 .rec-link:focus-visible {
   outline: 2px solid var(--accent-color);
