@@ -2,6 +2,7 @@
 :root {
   /* Palette */
   --ink: #00140d;
+  --dark-surface: #12211c;
   --paper: #ecf3f1;
   --white: #fff;
   --forest: #1c332c;
@@ -18,7 +19,7 @@
   --light-orange: #ffac70;
 
   /* Theme roles. These also feed the production component styles. */
-  --background: var(--ink);
+  --background: var(--dark-surface);
   --foreground: var(--paper);
   --muted: var(--forest);
   --muted-fg: var(--mist);
