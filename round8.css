@@ -34,6 +34,7 @@
   --status-dot: var(--light-orange);
   --grain-mode: overlay;
   --grain-opacity: .18;
+  --card-grain-opacity: .08;
 }
 
 [data-theme="light"] {
@@ -50,6 +51,7 @@
   --status-dot: var(--burnt-orange);
   --grain-mode: multiply;
   --grain-opacity: .11;
+  --card-grain-opacity: .05;
 }
 
 .status-dot,
@@ -73,15 +75,34 @@ footer .footer-links a {
   color: var(--foreground);
 }
 
-body::before {
+body::before,
+body:has(.home .options) > nav::after,
+.home .options a::after {
   content: "";
-  position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 300;
   background: url("/img/grain.png") repeat;
   opacity: var(--grain-opacity);
   mix-blend-mode: var(--grain-mode);
+}
+
+body::before {
+  position: fixed;
+  z-index: 300;
+}
+
+/* Cards sit above the page grain. The sticky header still sits above the cards. */
+body:has(.home .options) > nav {
+  z-index: 302;
+}
+
+body:has(.home .options) > nav::after,
+.home .options a::after {
+  position: absolute;
+}
+
+.home .options a::after {
+  opacity: var(--card-grain-opacity);
 }
 
 .home .options {
@@ -89,6 +110,8 @@ body::before {
 }
 
 .home .options a {
+  position: relative;
+  z-index: 301;
   overflow: hidden;
   padding: 0 0 20px;
   background: var(--accent);
@@ -157,8 +180,7 @@ body::before {
   align-items: center;
   justify-content: center;
   isolation: isolate;
-  background: var(--paper) url("/img/grain.png");
-  background-blend-mode: soft-light;
+  background: var(--paper);
 }
 
 .project-icon-stack img {
